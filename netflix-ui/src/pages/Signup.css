@@ -1,0 +1,59 @@
+.content{
+    position: absolute;
+    top: 0;                                    /* to move content over the image */
+    background-color: rgba(0 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
+    /* display: grid; */
+}
+
+div.mainbody{
+    padding-top: 170px;
+    text-align: center;
+}
+
+div.mainbody h1, div.mainbody h4, div.mainbody h6{
+    margin: 7px;
+}
+
+
+div.mainbody h4, div.mainbody h6{
+    font-weight: lighter;
+}
+
+.form{
+    padding: 10px;
+}
+
+div input.SignUpEmail, div input.SignUpPasword{
+    width: 400px;
+    color: white ;
+    font-size: 15px;
+    padding: 20px;
+    margin-left: 1px;
+    background-color: black;
+    border-radius: 25px;
+}
+
+
+input:hover{
+    border: 1px solid lightgreen;
+}
+
+div.mainbody button.SignUpButton{
+    margin-left: 140px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100px;
+    height: 45px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+
+.mainbody button.SignUpButton:hover{
+    background-color: darkred;
+}

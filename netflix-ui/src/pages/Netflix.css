@@ -1,0 +1,31 @@
+.mainMovie img.mainimg{
+    filter: brightness(60%);
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainMovie div.container{
+    position: absolute;
+    bottom: 120px;
+    margin-left: 50px;
+}
+
+.mainMovie div.container div.buttons{
+    margin-top: 80px;
+}
+
+div.buttons button{
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    margin-right: 20px;
+}
+
+
+div.buttons button:hover{
+    background-color:cyan;
+}

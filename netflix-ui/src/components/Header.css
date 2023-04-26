@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo{
+    height: 80px;
+    margin-left: 150px;
+}
+
+.button{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    width: 80px;
+    height: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-right: 150px; 
+    margin-top: 20px;
+}
+
+.button:hover{
+    background-color: darkred;
+}

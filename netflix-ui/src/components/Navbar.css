@@ -1,0 +1,67 @@
+div nav.flex{
+    display: flex;
+    position: sticky; 
+    top: 0;                                     /* Position the navbar at the top of the page */
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    z-index: 2;
+}
+
+nav div.containerleft{
+    display: flex;
+    margin-left: 20px;
+}
+
+ul.navbarList{
+    display: flex;
+    list-style-type: none;
+    padding-top: 25px;
+}
+
+div ul.navbarList li a{
+    color: white;
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+
+div nav.scrolled{
+    background-color: black;
+    transition: .3s;
+}
+
+div.contianerRight{
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+div.contianerRight .navSearch{
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+div.contianerRight .navSearch:hover{
+    color: red;
+}
+
+div.contianerRight .logout{
+    background-color: transparent;
+    border: none;
+    color: red;    
+    margin-left: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+div.contianerRight .navField{
+    width: 170px;
+    margin-right: 5px;
+    height: 25px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+}
