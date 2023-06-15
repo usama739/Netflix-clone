@@ -10,7 +10,6 @@ export default function Header(props) {
         
         <div className='header'>
             <img src={logo} alt="logo" className='logo'/>
-              {/* navigate to login page on clicking button  */}
               {props.MysignUp &&    
                   
                   <button className='button' onClick={() => {navigate('/login');}}>Log In</button>

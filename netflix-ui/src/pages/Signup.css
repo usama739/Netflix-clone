@@ -4,7 +4,6 @@
     background-color: rgba(0 0, 0, 0.7);
     height: 100vh;
     width: 100vw;
-    /* display: grid; */
 }
 
 div.mainbody{
@@ -12,13 +11,21 @@ div.mainbody{
     text-align: center;
 }
 
-div.mainbody h1, div.mainbody h4, div.mainbody h6{
+div.mainbody h1 {
+    font-size: 50px;
     margin: 7px;
 }
 
 
 div.mainbody h4, div.mainbody h6{
+    margin: 7px;
+    font-size: 30px;
+}
+
+div.mainbody h6{
+    margin: 7px;
     font-weight: lighter;
+    font-size: 30px;
 }
 
 .form{
@@ -57,3 +64,15 @@ div.mainbody button.SignUpButton{
 .mainbody button.SignUpButton:hover{
     background-color: darkred;
 }
+
+
+
+@media (max-width: 600px) {
+    div.mainbody h1 {
+        font-size: 40px;
+    }
+
+    div.mainbody h4, div.mainbody h6{
+        font-size: 20px;
+    }
+  }

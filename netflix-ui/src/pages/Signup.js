@@ -1,10 +1,9 @@
-import React , {useState, useEffect} from 'react'
+import React , {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
-import {createUserWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
-import {firebaseAuth} from '../utils/firebase-config';
 import Header from '../components/Header';
 import BackgroundImage from '../components/BackgroundImage';
+import axios from 'axios';
 
 
 export default function Signup() {
@@ -14,20 +13,24 @@ export default function Signup() {
     password:"",
   })
 
+
+  /// sending post request (email, password) to '/sigup' endpoint
   const handleSignIn = async ()=> {                             // trigger on clicking 'Sign Up'
+    const baseURL = 'http://localhost:3001';                /// server is listening on port 3001 ///
     try{
       const {email, password} = formValues
-      await createUserWithEmailAndPassword(firebaseAuth, email, password)
+      const response = await axios.post(`${baseURL}/signup`, {
+        email: email,
+        password: password
+      })
+
+      if (response.status === 201) {
+        navigate('/');
+      }
     }catch(err){
       console.log(err)
     }
   }
-
-  useEffect(() => {
-    onAuthStateChanged(firebaseAuth, (currentUser) => {
-      if(currentUser) navigate("/")
-    })
-  });
 
  
   return (
@@ -38,9 +41,9 @@ export default function Signup() {
         <Header MysignUp={true}/>
         <div className='mainbody'>
           <div className='intro'>
-            <h1 style={{fontSize: "50px"}}>Unlimited movies, TV shows, and more.</h1>
-            <h4 style={{fontSize: "30px"}}>Watch anywhere. Cancel anytime.</h4>
-            <h6 style={{fontSize: "30px"}}>Ready to watch? Enter your Email & Password</h6>
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <h4>Watch anywhere. Cancel anytime.</h4>
+            <h6>Ready to watch? Enter your Email & Password</h6>
           </div>
          
           <form className='form'>

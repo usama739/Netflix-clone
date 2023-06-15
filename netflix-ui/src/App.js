@@ -4,6 +4,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Netflix from "./pages/Netflix";
 import Player from './pages/Player';
+import Search from './components/Search'
+import MyList from './pages/MyList';
+
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/" element={<Netflix />} />
           <Route exact path="/player" element={<Player />} />
+          <Route exact path="/search" element={<Search />} />
+          <Route exact path="/mylist" element={<MyList />} />
+
         </Routes>
      </BrowserRouter>
     </div>

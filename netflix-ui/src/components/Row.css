@@ -1,0 +1,62 @@
+div.row{
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-top: 30px;
+}
+
+div.row-posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+div.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+img.row-poster {
+    object-fit: contain;
+    max-height: 200px;
+    margin-right: 10px;
+    transition: transform 450ms;
+}
+
+img.row-poster:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+div.poster-container {
+    margin-left: 10px;
+    position: relative;
+}
+
+  
+.watch-later-button .MuiSvgIcon-root{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+
+
+  .watch-later-button .MuiSvgIcon-root:hover{
+    color: red;
+}
+
+img.row_posterLarge {
+    max-height: 250px;
+}
+
+
+
+@media (max-width: 700px) {
+    img.row-poster {
+        height: 180px;
+        margin-right: 5px;
+    }
+}

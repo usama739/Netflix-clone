@@ -1,10 +1,9 @@
-import React , {useState, useEffect} from 'react'
+import React , {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import { onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
-import {firebaseAuth} from '../utils/firebase-config';
 import Header from '../components/Header';
 import BackgroundImage from '../components/BackgroundImage';
+import axios from 'axios';
 
 
 export default function Login() {
@@ -14,20 +13,25 @@ export default function Login() {
     password:"",
   })
 
-  const handleLoginIn = async ()=> {                             // trigger on clicking 'Log In'
+
+  /// sending post request (email, password) to '/login' endpoint
+  const handleLoginIn = async ()=> {                             
+    const baseURL = 'http://localhost:3001';                /// server is listening on port 3001 ///
     try{
       const {email, password} = formValues
-      await signInWithEmailAndPassword(firebaseAuth, email, password)
+      const response = await axios.post(`${baseURL}/login`, {
+        email: email,
+        password: password
+      })
+      
+      if (response.status === 200) {
+        navigate('/');
+      }
     }catch(err){
       console.log(err)
     }
   }
 
-  useEffect(() => {
-    onAuthStateChanged(firebaseAuth, (currentUser) => {
-      if(currentUser) navigate("/")
-    })
-  });
 
  
   return (
